@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Checkbox Selection</title>
+</head>
+<body>
+
+    <form name="dynamic">
+        Select One option: <br><br>
+        <input type="checkbox" name="subject" id="java" value="Java"> Java
+        <input type="checkbox" name="subject" id="python" value="Python"> Python
+        <input type="checkbox" name="subject" id="js" value="JavaScript"> JavaScript
+        <br><br>
+        <input type="button" value="Submit" onclick="ck()"> 
+        
+        
+
+    </form>
+    
+    <script>
+        
+        function ck(){
+
+       let checkboxes = document.getElementsByName("subject");
+       let result = "";
+       for(let i = 0; i<checkboxes.length; i++){
+        if(checkboxes[i].checked){
+            result += checkboxes[i].value +" "+ ",";
+        }
+       }
+       document.writeln("<p>You have Selected</p>"+ result + " ");
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read Only Element</title>
+</head>
+<body>
+    Enter Text Here:
+    <input type="text" value="This is JavaScript" id="readText">
+    <button onclick="readOnly()" id="mybutton">Read Only</button>
+    <button onclick="writeOnly()" id="mybutton1">Write Only</button>
+
+    <script>
+        function readOnly(){
+            document.getElementById("readText").readOnly = true;      
+            document.getElementById("mybutton").disabled = true;
+            document.getElementById("mybutton1").disabled = false;
+        }
+
+        function writeOnly(){
+            document.getElementById("mybutton").disabled = false;
+            document.getElementById("readText").readOnly = false;
+            document.getElementById("mybutton1").disabled = true;
+        }
+        
+    </script>
+</body>
+</html>

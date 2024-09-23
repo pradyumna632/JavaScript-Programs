@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Option List</title>
+</head>
+<body>
+    <form name="optionList" method="get">
+
+        Select One Option:
+        <br><br>
+        <input type="radio" name="meal" id="veg" value="veg" onclick="changeList(this.value)"> Veg
+        <input type="radio" name="meal" id="nonVeg" value="nonVeg" onclick="changeList(this.value)"> Non-Veg
+        <br><br>
+        <select name="food" id="food">
+            <option value="1">Pav Bhaji</option>
+            <option value="2">Vada Pav</option>
+            <option value="3">Malai Panner</option>
+        </select>
+        <br><br>
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+
+        function changeList(Val){
+
+            if(Val == "nonVeg"){
+                food[0].value = 1;
+                food[0].text = "Chicken Biryani";
+                food[1].value = 2;
+                food[1].text = "Butter Chicken Curry";
+                food[2].value = 3;
+                food[2].text = "Mutton";
+            }
+
+
+            if(Val == "veg"){
+                food[0].value = 1;
+                food[0].text = "Pav Bhaji";
+                food[1].value = 2;
+                food[1].text = "Vada Pav";
+                food[2].value = 3;
+                food[2].text = "Malai Panner";
+            }
+
+
+        }
+
+    </script>
+
+</body>
+</html>

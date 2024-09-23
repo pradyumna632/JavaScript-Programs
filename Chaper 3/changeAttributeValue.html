@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Change Attribute Value Dynamically</title>
+</head>
+<body>
+    <form name="dynamic" method="get">
+       <div class="myClass">
+        First Name: <input type="text" name="firstName" id="firstName" onchange="val()"> <br><br>
+        Last Name: <input type="text" name="lastName" id="lastName" onchange="val1()"> <br><br>
+        <input type="button" value="Submit" onclick="emailGenerate()">
+       </div>
+       <br><br>
+       Generated Email Id: 
+       <p id="val"></p>
+
+    </form>
+
+    <script>
+        function val(){
+            document.getElementById("firstName").style.backgroundColor = "yellow";
+        }
+
+        function val1(){
+            document.getElementById("lastName").style.backgroundColor = "yellow";
+        }
+
+        function emailGenerate(){
+           let fname =  document.getElementById("firstName").value;
+           let lname =  document.getElementById("lastName").value;
+           let write = document.getElementById("val");
+           write.innerHTML = fname + "."+ lname + "@gmail.com";
+        }
+
+    </script>
+</body>
+</html>

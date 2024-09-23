@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read Only Element</title>
+</head>
+<body>
+    Enter Text Here:
+    <input type="text" value="This is JavaScript" id="readText">
+    <button onclick="readOnly()" id="mybutton">Read Only</button>
+    <button onclick="writeOnly()" id="mybutton1">Write Only</button>
+
+    <script>
+        function readOnly(){
+            document.getElementById("readText").readOnly = true;       
+        }
+
+        function writeOnly(){
+            document.getElementById("readText").readOnly = false;
+        }
+        
+    </script>
+</body>
+</html>

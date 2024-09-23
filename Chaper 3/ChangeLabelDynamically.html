@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Light Mode</title>
+</head>
+<body id="body">
+    <h1>Toggle Mode</h1>
+    <button onclick="ToggleButton()" id="t1">Dark Mode</button>
+<style>
+    body{
+        background-color:white;
+    }
+    h1{
+        margin-left: 560px;
+    }
+    button{
+        margin-left: 350px;
+        margin-top: 200px;
+        height: 200px;
+        width: 200px;
+        font-size: 50px;
+    }
+   
+</style>
+    <script>
+
+    let body = document.getElementById("body");
+    let btn = document.getElementById("t1");
+
+      function ToggleButton(){
+        if(btn.innerText == "Dark Mode"){
+            btn.innerText = "Light Mode";
+            document.body.style.backgroundColor = "black";  
+            document.body.style.color = "white"
+        } else{
+            btn.innerText = "Dark Mode";
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black"
+        }
+      }  
+
+    </script>
+</body>
+</html>
