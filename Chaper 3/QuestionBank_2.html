@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Calculator</title>
+</head>
+<body>
+
+    <form name="calculator">
+
+        Amount:
+        <input type="text" name="amount" id="amount">
+        <br><br>
+        Rate of Interest (%):
+        <input type="text" name="roi" id="roi">
+        <br><br>
+        Period (years):
+        <input type="text" name="period" id="period">
+        <br><br>
+        <input type="button" value="Calculate Simple Interest" id="rateOfInterest" onclick="calculate()">
+    </form>
+    
+    <script>
+        function calculate() {
+            // Getting values from input fields
+            let amount = parseFloat(document.getElementById("amount").value);
+            let rateOfInterest = parseFloat(document.getElementById("roi").value);
+            let period = parseFloat(document.getElementById("period").value);
+
+            // Validate if all inputs are numbers
+            if (isNaN(amount) || isNaN(rateOfInterest) || isNaN(period)) {
+                alert("Please enter valid numeric values.");
+                return;
+            }
+
+            // Simple Interest formula: (Amount * Rate of Interest * Period) / 100
+            let simpleInterest = (amount * rateOfInterest * period) / 100;
+            
+            // Displaying the result
+            alert("The Simple Interest is: " + simpleInterest.toFixed(2));
+        }
+    </script>
+
+</body>
+</html>

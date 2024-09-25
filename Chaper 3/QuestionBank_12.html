@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>Write HTML Script that displays textboxes for accepting Name, 
+        middlename, Surname of the user and a Submit button.
+        Write proper JavaScript such that when the user clicks on submit button
+        i) alltexboxes must get disabled and change the color to “RED”. and 
+        with respective labels.
+        ii) Constructs the mailID as .@msbte.com and displays mail ID as 
+        message. (Ex. If user enters Raj as name and Pathak as surname 
+        mailID will be constructed as raj.pathak@msbte.com).</p>
+    
+    <form name="login" method="get">
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName">
+        <br><br>
+        <label for="middleName">Middle Name:</label>
+        <input type="text" name="middleName" id="middleName">
+        <br><br>
+        <label for="surname">Surname:</label>
+        <input type="text" name="surname" id="surname">
+        <br><br>
+        <input type="button" value="Submit" onclick="displayInfo()">
+    </form>
+    
+    <p id="info"></p>
+
+    <script>
+        function displayInfo(){
+            let fName = document.getElementById("firstName");
+            let mName = document.getElementById("middleName");
+            let lName = document.getElementById("surname");
+            let mail = document.getElementById("info");
+            
+            fName.style.backgroundColor = "red";
+            mName.style.backgroundColor = "red";
+            lName.style.backgroundColor = "red";
+
+            fName.disabled = true;
+            mName.disabled = true;
+            lName.disabled = true;
+
+            mail.innerHTML = "Generated Email ID is: " + fName.value.toLowerCase() + "." + lName.value.toLowerCase() + "@msbte.com"
+
+        }
+    </script>
+</body>
+</html>

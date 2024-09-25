@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p>Write a Java script to design a form to accept values for user ID & password
+        and display the values on webpage.</p>
+    
+    <form name="login" method="get">
+        <label for="userId">User ID</label>
+        <input type="text" name="userId" id="userId">
+        <br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <br><br>
+        <input type="button" value="Submit" onclick="displayInfo()">
+    </form>
+    
+    <p id="info"></p>
+
+    <script>
+        function displayInfo(){
+            let uid = document.getElementById("userId").value;
+            let pass = document.getElementById("password").value;
+            document.getElementById("info").innerHTML = "The username = " + uid + " and Password = " + pass;
+        }
+    </script>
+</body>
+</html>

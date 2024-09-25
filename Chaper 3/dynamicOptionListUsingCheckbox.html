@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dynamic Option List</title>
+</head>
+<body>
+    <form name="optionList" method="get">
+
+        Select One Option:
+        <br><br>
+        <input type="checkbox" name="state" id="MH" value="MH" onclick="changeList(this.value)"> Maharashtra
+        <input type="checkbox" name="state" id="Goa" value="Goa" onclick="changeList(this.value)"> Goa
+        <input type="checkbox" name="state" id="KA" value="KA" onclick="changeList(this.value)"> Karnataka
+        <br><br>
+        <select name="city" id="city">
+            <option value="1">Mumbai</option>
+            <option value="2">Pune</option>
+            <option value="3">Satara</option>
+        </select>
+        <br><br>
+        <input type="reset" value="Reset">
+    </form>
+
+    <script>
+
+        function changeList(Val){
+
+            if(Val == "MH"){
+                city[0].value = 1;
+                city[0].text = "Mumbai";
+                city[1].value = 2;
+                city[1].text = "Pune";
+                city[2].value = 3;
+                city[2].text = "Satara";
+            }
+
+
+            if(Val == "Goa"){
+                city[0].value = 1;
+                city[0].text = "Panaji";
+                city[1].value = 2;
+                city[1].text = "Vasco da Gama";
+                city[2].value = 3;
+                city[2].text = "Madgaon";
+            }
+
+            if(Val == "KA"){
+                city[0].value = 1;
+                city[0].text = "Hampi";
+                city[1].value = 2;
+                city[1].text = "Mysore";
+                city[2].value = 3;
+                city[2].text = "Bangalore";
+            }
+
+
+        }
+
+    </script>
+
+</body>
+</html>

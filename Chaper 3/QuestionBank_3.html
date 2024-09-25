@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <form name="calculator">
+
+        first number:
+        <input type="text" name="num1" id="num1">
+        <br><br>
+        Second number:
+        <input type="text" name="num2" id="num2">
+        <br><br>
+        <input type="button" value="ADDITION" id="add" onclick="calculate(this.value)">
+        <input type="button" value="SUBTRACTION" id="sub" onclick="calculate(this.value)">
+        <input type="button" value="MULTIPLICATION" id="mul" onclick="calculate(this.value)">
+        <input type="button" value="DIVISION" id="div" onclick="calculate(this.value)">
+
+    </form>
+    
+
+    <script>
+
+        function calculate(value){
+
+            let no1 = document.getElementById("num1").value;
+            let no2 = document.getElementById("num2").value;
+
+            let add = document.getElementById("add");
+            let sub = document.getElementById("sub");
+            let mul = document.getElementById("mul");
+            let div = document.getElementById("div");
+
+            if(value == "ADDITION"){
+                let c = parseInt(no1)+parseInt(no2);
+                alert("Addition is: " + c)
+            }
+            else if(value == "SUBTRACTION"){
+                let c = parseInt(no1)-parseInt(no2);
+                alert("Subtraction is: " + c)
+            }
+            else if(value == "MULTIPLICATION"){
+                let c = parseInt(no1)*parseInt(no2);
+                alert("Multiplication is: " + c)
+            }
+            else if(value == "DIVISION"){
+                let c = parseInt(no1)/parseInt(no2);
+                alert("Division is: " + c)
+            }else{
+                alert("Invalid Value")
+            }
+
+
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>
