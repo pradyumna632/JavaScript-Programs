@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Cookies</title>
+</head>
+<body>
+
+    <p>Write a JavaScript program to create read, update and delete cookies.</p>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+    <br><br>
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password">
+    <br><br>
+    <input type="button" value="Create Cookies" onclick="createCookie()">
+    <input type="button" value="Update Cookies" onclick="updateCookies()">
+    <input type="button" value="Read Cookies" onclick="readCookies()">
+    <input type="button" value="Delete Cookies" onclick="deleteCookies()">
+    
+
+<script>
+   
+    function createCookie(){
+        user = document.getElementById("username").value;
+        pass = document.getElementById("password").value;
+    
+        document.cookie = "username=" + user + ";";
+        document.cookie = "password=" + pass + ";";
+    }
+
+    function updateCookies(){
+
+        document.cookie = "username=" + "Cherry" + ";";
+        document.cookie = "password=" + "pass@0987" + ";";       
+    }
+
+    function readCookies(){
+        alert(document.cookie);
+    }
+
+    function deleteCookies(){
+        document.cookie = "username=" + user + ";expires= Thu, 04, Oct 2023 12:00:00 UTC";
+        document.cookie = "password=" + pass + ";expires= Thu, 04, Oct 2023 12:00:00 UTC";
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Number Validation</title>
+    <script>
+        function validatePhoneNumber() {
+            const phoneNumber = document.getElementById('phone').value;
+            
+            // Regular expression for phone number in the format (ddd) – (dddddddd)
+            const phonePattern = /^\(\d{3}\)[-]\(\d{8}\)$/;
+
+            // Validate phone number format
+            if (phonePattern.test(phoneNumber)) {
+               alert("Correct Phone Number")
+            } else {
+                alert("InCorrect Phone Number")
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Phone Number Validation</h2>
+    
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="(ddd) – (dddddddd)" required><br><br>
+
+    <button onclick="validatePhoneNumber()">Validate</button>
+
+    <p id="result"></p>
+
+</body>
+</html>

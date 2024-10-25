@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="mail">Enter Aadhar Card Number: </label>
+    <input type="text" name="aadhar" id="aadhar">
+    <button onclick="check()">Check Password strength</button>
+</body>
+
+<script>
+
+    function check(){
+        let aadhar = document.getElementById("aadhar").value
+        let pattern = /^(\d{4}[-.]\d{4}[-.]\d{4})$/
+
+        if(pattern.test(aadhar)){
+            alert("Correct aadhar Card Number")
+        }else{
+            alert("Incorrect aadhar Card Number")
+        }
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chained Dropdown Example</title>
+</head>
+<body>
+    <h2>Chained Dropdown for Branch, Year, and Subject</h2>
+
+    <!-- First Dropdown: Branch -->
+    <label for="branch">Branch:</label>
+    <select id="branch" name="branch" onchange="updateYear()">
+        <option value="">Select Branch</option>
+        <option value="computer">Computer Engineering</option>
+        <option value="electronics">Electronics Engineering</option>
+    </select>
+    
+    <!-- Second Dropdown: Year -->
+    <label for="year">Year:</label>
+    <select id="year" name="year" onchange="updateSubjects()">
+        <option value="">Select Year</option>
+    </select>
+
+    <!-- Third Dropdown: Subject -->
+    <label for="subject">Subject:</label>
+    <select id="subject" name="subject">
+        <option value="">Select Subject</option>
+    </select>
+
+    <script>
+        // Function to populate the year dropdown based on branch selection
+        function updateYear() {
+            var branch = document.getElementById('branch').value;
+            var year = document.getElementById('year');
+            var subject = document.getElementById('subject');
+
+            // Clear the previous year and subject options
+            year.innerHTML = '<option value="">Select Year</option>';
+            subject.innerHTML = '<option value="">Select Subject</option>';
+
+            if (branch !== "") {
+                var years = ["1st Year", "2nd Year", "3rd Year"];
+                for (var i = 0; i < years.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = years[i].toLowerCase().replace(/ /g, "-");
+                    option.text = years[i];
+                    year.appendChild(option);
+                }
+            }
+        }
+
+        // Function to populate the subject dropdown based on branch and year selection
+        function updateSubjects() {
+            var branch = document.getElementById('branch').value;
+            var year = document.getElementById('year').value;
+            var subject = document.getElementById('subject');
+
+            // Clear previous subject options
+            subject.innerHTML = '<option value="">Select Subject</option>';
+
+            if (branch === "computer") {
+                if (year === "1st-year") {
+                    var subjects = ["Mathematics", "Physics", "C Programming"];
+                } else if (year === "2nd-year") {
+                    var subjects = ["Data Structures", "Java", "Database Management"];
+                } else if (year === "3rd-year") {
+                    var subjects = ["Operating Systems", "Python", "Computer Networks"];
+                }
+            } else if (branch === "electronics") {
+                if (year === "1st-year") {
+                    var subjects = ["Mathematics", "Physics", "Basic Electronics"];
+                } else if (year === "2nd-year") {
+                    var subjects = ["Circuit Theory", "Electromagnetic Fields", "Analog Electronics"];
+                } else if (year === "3rd-year") {
+                    var subjects = ["Microprocessors", "Digital Communication", "Control Systems"];
+                }
+            }
+
+            // Add subject options to the dropdown
+            if (subjects) {
+                for (var i = 0; i < subjects.length; i++) {
+                    var option = document.createElement('option');
+                    option.value = subjects[i].toLowerCase().replace(/ /g, "-");
+                    option.text = subjects[i];
+                    subject.appendChild(option);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

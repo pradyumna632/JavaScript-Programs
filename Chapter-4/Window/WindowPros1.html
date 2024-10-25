@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <input type="button" value="Open Window" onclick="winOpen()">
+
+    <script>
+
+       function winOpen(){
+        let win = window.open("https://www.w3schools.com/", "w3schools", "left=200, top=200, width=800, height=500")
+        
+        document.write("Window Outer Height: " + win.outerHeight);
+        document.write("\n");
+        document.write("\nWindow Outer Width: " + win.outerWidth);
+        document.write("\n");      
+        document.write("Screen X: " + win.screenX);
+        document.write("\n");
+        document.write("Screen Y: " + win.screenY);
+        document.write("\n");
+        document.write("Name of Window: " + win.name);
+       
+
+
+
+
+       }
+
+    </script>
+    
+</body>
+</html>

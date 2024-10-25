@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="rotate()">
+    <img src="" alt="no image" height="400" width="600" id="cover">
+</body>
+<script>
+    let count = 0;
+    function rotate(){
+        let banners = ["images/rabbit.jpg", "images/mountain.jpg", "images/sky-scraper.jpg"]
+        let coverImg = document.getElementById("cover")
+        if(coverImg){
+            count++;
+            if(count == banners.length){
+                count=0;
+            }
+            document.getElementById("cover").src = banners[count];
+            setTimeout(rotate, 1000);
+        }
+    }
+</script>
+</html>

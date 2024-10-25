@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="mail">Enter Email: </label>
+    <input type="text" name="mail" id="mail">
+    <button onclick="checkEmail()">Check Email ID</button>
+</body>
+
+<script>
+
+    function checkEmail(){
+        let email = document.getElementById("mail").value
+        let pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$/
+
+        if(pattern.test(email)){
+            alert("email is correct")
+        }else{
+            alert("Incorrect email ID")
+        }
+
+    }
+
+</script>
+
+</html>

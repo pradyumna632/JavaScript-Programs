@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>window.status Example</title>
+</head>
+<body>
+    <h2>Hover over the button to change window status</h2>
+    
+    <button onmouseover="showHoverStatus()" onmouseout="clearStatus()">Hover Over Me</button>
+
+    <script>
+        function showHoverStatus() {
+            // Set the window status message (this won't display in modern browsers)
+           let s = window.status = "You are hovering over the button!";
+            console.log(s);
+        }
+
+        function clearStatus() {
+            // Clear the window status message
+            let s = window.status = "";
+            console.log(s);
+        }
+    </script>
+</body>
+</html>

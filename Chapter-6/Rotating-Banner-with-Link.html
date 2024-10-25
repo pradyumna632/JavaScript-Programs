@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Banner with Links</title>
+</head>
+<body onload="rotate()">
+    <a id="bannerLink" href="#" target="_blank">
+        <img src="" alt="no image" height="400" width="600" id="cover">
+    </a>
+</body>
+<script>
+    let count = 0;
+    function rotate() {
+        let banners = [
+            { src: "images/rabbit.jpg", url: "https://en.wikipedia.org/wiki/Rabbit" },
+            { src: "images/mountain.jpg", url: "https://en.wikipedia.org/wiki/Mountain" },
+            { src: "images/sky-scraper.jpg", url: "https://en.wikipedia.org/wiki/Skyscraper" }
+        ];
+
+        let coverImage = document.getElementById('cover');
+        let bannerLink = document.getElementById('bannerLink');
+
+        if (coverImage && bannerLink) {
+            count++;
+            if (count == banners.length) {
+                count = 0;
+            }
+            // Updated the src of the image and the href of the link
+            coverImage.src = banners[count].src;
+            bannerLink.href = banners[count].url;
+            
+            setTimeout(rotate, 1000);
+        }
+    }
+</script>
+</html>

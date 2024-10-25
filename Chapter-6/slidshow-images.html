@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slideshow</title>
+</head>
+<body>
+
+<div>
+    <img id="slideshow" src="images/rabbit.jpg" alt="Slideshow Image" width="600" height="400">
+</div>
+
+<button id="prevBtn">Previous</button>
+<button id="nextBtn">Next</button>
+
+<script>
+    const images = ["images/rabbit.jpg", "images/mountain.jpg", "images/sky-scraper.jpg"];
+    let currentIndex = 0;
+
+    const imgElement = document.getElementById('slideshow');
+
+    function showNextImage() {
+        currentIndex = (currentIndex + 1) % images.length; // Loop back to the first image
+        imgElement.src = images[currentIndex];
+    }
+
+    function showPrevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop back to the last image
+        imgElement.src = images[currentIndex];
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', showNextImage);
+    document.getElementById('prevBtn').addEventListener('click', showPrevImage);
+</script>
+
+</body>
+</html>
